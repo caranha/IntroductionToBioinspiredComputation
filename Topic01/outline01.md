@@ -3,20 +3,19 @@ the concepts of Artificial life.
 
 # Outline:
 
-## Introduction to the Course: (15 Min)
-- Goals of the Course,
-- Lecturer Introduction,
-- Class Format and Schedule
+## Introduction to the Course:
+- Goals of the Course;
+- Class Format;
+- Lecturer Introduction;
+- Notes about in-class behavior;
 
-## Bioinspired computation: (15 min)
-The overal topic of this course are computational systems that are inspired by,
-or try to reproduce, biological systems. More precisely: Alife, EvoComp,
-Multi-Agent Systems, and Neural Networks.
+### Bioinspired computation: (15 min)
+- What is Bioinspired computation?
+- Why is Bioinspired computation important?
 
-Why is Bioinspired computation important?
 
-# Today's topic: Artificial life
-## Basic Ideas (60 min)
+## Today's topic: Artificial life
+### Basic Ideas (60 min)
 Reproducing life in an artificial system
   - Example: The game of life
   - Types of artificial life: Soft, Hard, Wet
@@ -24,7 +23,7 @@ Reproducing life in an artificial system
     - Understanding Life (Alife characteristics, Homeostatis, Autopoiesis, etc)
     - Making Life (Alife simulations / Life as it could be)
     - Imagining Life (Alife Art: Spec Bio, Wind robots)
-## Artificial Life Systems (60 min)
+### Artificial Life Systems (60 min)
   - Diffusion Systems
   - Self-replicating systems
     - Cellular Automata
@@ -40,11 +39,21 @@ Reproducing life in an artificial system
     - Agency and humans (Androids, Robots)
   - Alife simulations
     - Bibites, more complex systems trying to replicate life
-## Other concepts (30 min)
+### Other concepts (30 min)
   - Alife for observing life in exoplanets, earth as an exoplanet
   - Homeostatic Awakening paper
 
-# Hands on systems:
+## Hands on systems:
 - Game of Life,
 - Avida-Edu,
 - Bibites,
+
+# Details
+
+## About this Course
+
+The overal topic of this course are computational systems that are inspired by,
+or try to reproduce, biological systems. More precisely: Alife, EvoComp,
+Multi-Agent Systems, and Neural Networks.
+
+Why is Bioinspired computation important?
