@@ -39,6 +39,31 @@ layout: true
 
 # What is Evolutionary Computation?
 
+- Slide with images from underwater creatures
+- Nature has surprised us with a very wide array of creatures
+
+---
+
+# What is Evolutionary Computation?
+
+- What if computers could evolve with the same variety that we see in nature?
+- What sorts of different computing systems could we observe?
+
+---
+
+# What is Evolutionary Computation?
+
+- **Evolutionary Computation** is the name we give to a very large variety of technologies
+
+- All these technologies have one thing in common: They are inspired by the natural evolutionary process, and want to reproduce it inside a computer.
+
+---
+
+# Discussion
+
+- What do you think computers could do, if they were able to evolve?
+- What about other technologies? What kind of technology would you like to endow with evolution?
+
 ---
 layout: true
 
@@ -48,6 +73,8 @@ layout: true
 
 # A Recap on Natural Evolution
 
+- Take this straight from the online Course
+
 ---
 layout: true
 
@@ -56,6 +83,15 @@ layout: true
 ---
 
 # Evolutionary Computation Example: Evolving Racing Cars
+
+- Youtube Video about Evolving Racing Cars
+
+---
+
+# We can play with Evolving Racing Cars in this link
+
+- Link to evolving Racing Cars
+- We will play with it more in the future
 
 ---
 layout: true

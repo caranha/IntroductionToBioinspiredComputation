@@ -5,6 +5,8 @@ class: center, middle
 ## Lecture 01: Artificial Life
 Claus Aranha, University of Tsukuba
 
+![](img/boids.gif)
+
 ---
 name: toc
 
@@ -235,22 +237,191 @@ layout: true
 
 # What is Bioinspired Computation?
 
+.cols[
+
+.c30[
+.center[
+![:scale 60%](img/Margareth_Hamilton.png)
+
+*Margareth Hamilton, Software Lead of the Apollo Program*
+]
+]
+
+.c70[
+Usually, when we think of computing systems, we think of projects carefully built from mathematics and engineering to solve some human need.
+
+We see these artificial artifacts as extremely useful, and possessing design and abilities unlike anything found in the natural world.
+
+The artificial is clean, organized, and helpful. While the natural is messy and chaotic and a bit of a mistery.
+]
+]
+
 ---
 
 # Being Inspired by Nature
 
+On the other hand, natural creatures sometimes exhibit incredible abilities!
+
+.cols[
+.c20[
+![:scale 95%](img/nature_ants.png)
+]
+.c30[
+**Ants:**
+- Pheromone communication
+- Cooperative hunting / building
+- Stigmergy
+]
+.c20[
+![:scale 90%](img/nature_spider.png)
+]
+.c30[
+**Spiders:**
+- Nests capture prey
+- Spider mind games
+- Spider silk strength
+- Flexible movement
+]
+]
+
+.greentext[And many others!] We should draw inspiration from the natural world to build our systems!
+
+**Bioinspired Computation** are disciplines that try to reproduce these abilities in computing systems.
+
 ---
 
-# Being Inspired by Nature: Example 01 Tabbot
+# Bioinspired Examples
+
+.largetext[
+
+Let's look at two examples of bio-inspired systems:
+
+
+- "*Tabbot*": A robot inspired by spider's movement;
+
+
+- "*Boids*": A CG system inspired by flocks of birds;
+]
+
+---
+
+# Bioinspired System example 01: Tabbot
+
+.cols[
+  .c40[
+
+  - **Ingo Rechenberg** was a German scientist who wanted to develop robots capable of navigating extreme terrain conditions, such as deserts.
+
+  ![:scale 80%](img/tabbot_Ingo.png)
+  ]
+  .c30[
+
+  ![](img/tabbot_spider.gif)
+
+  In the Sahara desert, he found the "somersaulting spider", which used this jumping motion to flee from predators in high speed.
+
+  ]
+  .c30[
+
+  - Based on the spider's somersault, he developed a robot that can move quickly on sand.
+
+  ![](img/tabbot_sand.png)
+  ]
+]
+
+---
+
+# Bioinspired System example 01: Tabbot
+
+.center[![:scale 70%](img/tabbot_final_anim.gif)]
 
 ---
 
 # Being Inspired by Nature: Example 02 Boids
 
+.cols[
+.c50[
+.center[![:scale 90%](img/boids_natural.gif)]
+]
+.c50[
+.center[![:scale 90%](img/boids_animation.gif)]
+]
+]
+
+.greentext[Boids] is a Computer Graphics system design to look like a flock of birds. The movement of each bird is defined by **three simple rules**.
+
 ---
 
-# How do the topics in this course relate to Bioinspired Computation?
+# How do boids move?
 
+.cols[
+.c30[
+- Inspired by how birds flock together without .redtext[explicit communication], the Boids system also avoids using a central controller for the movement.
+
+- Each boid moves following .greentext[three simple rules], using only the information that it can sense nearby.
+]
+.c10[]
+.c60[
+**The three Boids rules:**
+
+
+![:scale 20%](img/boids_rule1.gif)
+Rule 1: **Cohesion**: Move towards the swarm
+
+![:scale 20%](img/boids_rule2.gif)
+Rule 2: **Avoidance**: Move away from others
+
+![:scale 20%](img/boids_rule3.gif)
+Rule 3: **Alignment**: Align direction
+]
+]
+
+---
+
+# Boids and Emergence
+
+By adding together **three simple rules**, and **decentralized decision making**, the Boids system achieves **complex, life-life behavior**!
+
+.center[.largetext[
+![:scale 20%](img/boids_rule1.gif) + ![:scale 20%](img/boids_rule2.gif) + ![:scale 20%](img/boids_rule3.gif) = ![:scale 20%](img/boids_animation.gif)
+]]
+
+When the interaction of simple rules or individuals cause complex behavior in a system, we call it **emergence**.
+
+**Emergence** is an important and desirable characteristics of bioinspired systems!
+
+---
+
+# Boids in the theater
+
+.center[![:scale 90%](img/boids_lotr.gif)]
+
+.largetext[
+This is a scene from *Lord of the Rings: The Two Towers (2002)*.  
+The CG soldiers in this scene move using a boids-like system.
+]
+
+---
+
+# Bioinspired computation and this course
+
+- All the technologies we will see in this course are, in one way or another, inspired by natural processes.
+
+  - Evolutionary Computation: Natural Evolution;
+  - Multi Agent Systems: Insects Swarms, social animals;
+  - Neural Networks: Brain cells;
+  - Artificial Life: Well... everything!
+
+
+.boxyellow[
+.boxlabel[Discussion time!]
+
+- What are natural processes that inspire you?
+- What kind of bio-inspired technology you would like to see in the world?
+
+]
+
+.right[**Time for a longer break!**]
 
 ---
 layout: false
@@ -361,3 +532,37 @@ and exchange your impressions with others in the class.
 - Game of Life
 - Avida
 - The Bibites
+
+---
+
+# Game of Life Simulation
+
+- What is?
+- How to use?
+- Tasks: Create a long pattern, create a stable pattern, try to create a pattern that generates other patterns.
+
+---
+
+# Avida-edu Simulation
+
+- What is?
+- How to use?
+- Tasks: Evolution competition. Measure the length of genomes in winning populations. Identify why a mutation becomes dominant.
+
+---
+
+# The Bibites Simulation
+
+- What is?
+- How to use?
+- Tasks: Run at advanced speed, and give a name to interesting mutations. Observe which characteristics are helpful or nocive to the creatures. Observe when new mutations start to dominate the population (may take some time!)
+
+---
+
+# Your task for the rest of the day:
+
+Form pairs or trios, and choose one of the three simulators to explore.
+
+Try to do the tasks suggested, but also explore following your interests and curiosity.
+
+Exchange ideas with your group mates about what you are seeing, and what it could be used for.

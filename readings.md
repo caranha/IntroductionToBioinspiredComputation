@@ -11,6 +11,14 @@ discussed in this lecture.
 - The Artificial Life Newsletter: https://alife-newsletter.github.io/Newsletter/
 - An Introduction to Alife for those who like AI: https://thegradient.pub/an-introduction-to-artificial-life-for-people-who-like-ai/
 
+## Boids:
+- [Explanation and Javascript simulation](http://www.harmendeweerd.nl/boids/?utm_source=pocket_mylist)
+- [Boids homepage](https://www.red3d.com/cwr/boids/)
+
+## Game of Life
+- [Game of life simulation in Javascript](https://copy.sh/life/)
+
+
 # Fiction
 - "The Lifecycle of Software Objects", Ted Chiang, 2010
 - "Children of Time", "Children of Ruin", Adrian Tchaikovsky, 2015

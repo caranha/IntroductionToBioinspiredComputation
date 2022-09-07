@@ -11,6 +11,9 @@ body {
 .remark-slide-content h2 { font-size: 1.5em; }
 .remark-slide-content h3 { font-size: 1.2em; }
 
+.redtext { color: #fa0000; }
+.greentext { color: #00aa00; }
+.largetext { font-size: 1.5em; }
 
 /* Code */
 
