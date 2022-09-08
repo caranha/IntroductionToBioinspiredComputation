@@ -18,6 +18,8 @@ discussed in this lecture.
 ## Game of Life
 - [Game of life simulation in Javascript](https://copy.sh/life/)
 
+## Evolutionary Cars
+- [Evolutionary Cars in Javascript](https://rednuht.org/genetic_cars_2/)
 
 # Fiction
 - "The Lifecycle of Software Objects", Ted Chiang, 2010

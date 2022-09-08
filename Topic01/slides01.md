@@ -30,12 +30,14 @@ name: toc
 layout: false
 class: center, middle
 
-# Part 01: Welcome to the Course!
+# Part 01
+
+# Welcome to the Course!
 
 ---
 layout: true
 
-.right[Part 01.01: Welcome to the Course!]
+.sectionname[**Part 01.01**: Welcome to the Course!]
 
 ---
 
@@ -231,7 +233,7 @@ Make sure to read them to complement your knowledge!
 ---
 layout: true
 
-.right[Part 01.02: BioInspired Computation]
+.sectionname[**Part 01.02**: BioInspired Computation]
 
 ---
 
@@ -427,12 +429,14 @@ The CG soldiers in this scene move using a boids-like system.
 layout: false
 class: center, middle
 
-# Part 02: Introduction to Artificial Life
+# Part 02
+
+# Introduction to Artificial Life
 
 ---
 layout: true
 
-.right[Part 02.01: Introduction to Artificial Life]
+.sectionname[**Part 02.01**: Introduction to Artificial Life]
 
 ---
 
@@ -443,7 +447,52 @@ layout: true
 
 ---
 
-# What is Artificial Life? Conway's "Game of Life"
+# How can we represent "Life" in a computer?
+
+Example: Conway's "Game of Life"
+
+---
+
+# Explaining the Game of Life
+
+---
+
+# Playing with the Game of Life
+
+---
+
+# What can we do with the Game of Life?
+
+- Beautiful patterns
+- Computation
+
+---
+
+# What can we do with the Game of life?
+(Life inside Life)
+
+---
+
+# How is the Game of Life similar to life?
+
+- Complexity from simple rules
+- Similarity with chemistry
+- Emergence of complex systems
+
+---
+
+# Is the Game of Life really Life?
+
+What is life? That is a very hard question, and answering that question is
+one of the research goal of Artificial Life.
+
+The fact that even the simple Game of Life can make us think about this
+is very important.
+
+---
+layout: true
+
+.sectionname[**Parts 02.02**: Types of Alife]
 
 ---
 
@@ -467,7 +516,7 @@ the type of approached used to produce the life-like system.
 ---
 layout: true
 
-.right[Part 02.02: Artificial Life Systems]
+.sectionname[**Part 02.02:** Artificial Life Systems]
 
 ---
 

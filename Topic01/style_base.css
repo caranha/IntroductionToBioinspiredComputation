@@ -150,6 +150,18 @@ img {
   font-size: 50%;
 }
 
+.sectionname {
+  position: absolute;
+  top: 0em;
+  right: 0em;
+  width: 100%;
+  text-align: right;
+  padding: .3em;
+  margin: 0px;
+  background-color: #55AA55;
+  border: 3px solid green;
+}
+
 .footnote {
   position: absolute;
   bottom: 2.5em;
