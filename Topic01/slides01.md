@@ -436,128 +436,630 @@ class: center, middle
 ---
 layout: true
 
-.sectionname[**Part 02.01**: Introduction to Artificial Life]
+.sectionname[**Part 02.01**: What is Artificial Life?]
 
 ---
 
 # What is Artificial Life?
 
-- Reproducing life-like systems to understand life.
-- "Life as it could be"
+.center[
+`"To study life by reproducing it in silico."`
+
+`"Life as it could be."`
+
+![:scale 50%](img/alifenewshead.png)
+
+]
+
+An inspiring, boundless idea, but also a bit vague. What exactly "to reproduce life?" means?
 
 ---
 
-# How can we represent "Life" in a computer?
+# Don't forget to feed your Tamagochi
 
-Example: Conway's "Game of Life"
+.cols[
+.c30[
+![](img/tamagochi.jpg)
+]
+.c70[
+- Very popular toy in the 90ies.
 
----
+- A virtual pet. It had to be fed, cleaned, and played with every day.
 
-# Explaining the Game of Life
+- If you forget to feed your tamagochi, it dies.
 
----
+- Many people formed bonds with their tamagochi.
 
-# Playing with the Game of Life
+- It was pretty cool.
+]
+]
 
----
+Should we consider the tamagochi "alive"?
+- If yes, what are the implications? "Tamagochi abuse"?
+- If not, why not? What are the conditions to life?
 
-# What can we do with the Game of Life?
+Considering these questions is the key to "Alife"!
 
-- Beautiful patterns
-- Computation
 
----
-
-# What can we do with the Game of life?
-(Life inside Life)
-
----
-
-# How is the Game of Life similar to life?
-
-- Complexity from simple rules
-- Similarity with chemistry
-- Emergence of complex systems
+.footnote[[Image by Tomasz Sienick, Wikipedia](https://en.wikipedia.org/wiki/Tamagotchi#/media/File:Tamagotchi_0124_ubt.jpeg)]
 
 ---
 
-# Is the Game of Life really Life?
+# Life from first Principles
 
-What is life? That is a very hard question, and answering that question is
-one of the research goal of Artificial Life.
+Tamagochi and robots are cute, but **the majority of life on earth is invisible to our eyes**.
 
-The fact that even the simple Game of Life can make us think about this
-is very important.
+.cols[
+.c60[
+Microorganisms:
+- Majority of life on earth
+- Not cute
+- Can't play with us
+- Still definitely alive.
+
+What makes life different from chemistry?
+
+What is the difference between a petri-dish full of protein, and one full of bacteria?
+
+Asking these questions is another part of Alife!
+]
+.c40[
+![:scale 80%](img/NPR_Xenobots.png)
+
+*Xenobots*, artificial creatures.
+]
+]
+
+
+.footnote[Image from [NPR](https://www.npr.org/2021/12/01/1060027395/robots-xenobots-living-self-replicating-copy)]
+
+---
+
+# Why Artificial Life?
+
+.cols[
+.c20[
+.right[![](img/NASA_NCG_Galaxy.jpg)]
+Public Domain picture by the Hubble Telescope
+]
+.c80[
+.largetext[
+- **Build something to understand it**:  
+Trying to build "life" systems, we learn more about the requisites to life.
+
+- **Life as it could be**:  
+As we consider the limits of what life is and is not,   
+we imagine how life could develop in extreme environments.
+
+- **Creating Eternal Art**:  
+Creating an artificial system that has all the creativity and exuberance of life.
+]
+]
+]
+
+---
+
+# Discussion: What is Life?
+
+.largetext[
+- What are the characteristics of a living system?
+
+- What are the open questions about life?
+
+- What could be the applications of an artificial life form?
+]
+
+.right[**Time for a quick break!**]
 
 ---
 layout: true
 
-.sectionname[**Parts 02.02**: Types of Alife]
+.sectionname[**Part 02.02**: Conway's Game of Life]
 
 ---
 
-# Types of Artificial Life
+# Example of Alife system: Conway's Game of Life
 
-Artificial Life research is usually divided in three large areas, depending on
-the type of approached used to produce the life-like system.
-
-- "Soft Alife"
-- "Hard Alife"
-- "Wet Alife"
+.center[![](img/GameOfLife_anim.gif)]
 
 ---
 
-# Questions of Artificial Life
+# What is the game of Life?
 
-- Understanding Life
-- Creating Life
-- Imagining Life
+.largetext[
+The game of life is a **mathematical construct** that presents characteristics that are similar to those of living systems, such as **complexity**, **emergence** and **chaos**.
 
+For over 50 years, many people have studied its properties.
+
+It is also quite fun!
+]
+
+.right[![:scale 15%](img/GameOfLife_glider.gif)]
+
+---
+
+# Rules of the Game of Life (1/2)
+
+.right[![:scale 15%](img/GameOfLife_glider.gif)]
+
+.largetext[
+- Grid of cells. Each cell can be .greentext[live] or .redtext[dead].
+
+- Each step, the state of each cell is updated based on its neighbors.  
+(local information, like boids)
+
+- This computation can be done by hand, or simulated.
+
+- A system like this is called **Cellular Automata**
+]
+
+---
+
+# Rules of the Game of Life (2/2)
+
+.cols[
+.c70[
+.largetext[
+1. .redtext[A live cell with less then 2 neighbors becomes dead.]
+
+2. .greentext[A live cell with 2 or 3 neighbors stays alive.]
+
+3. .redtext[A live cell with more than 3 neighbors becomes dead.]
+
+4. .greentext[A dead cell with 3 neighbors becomes alive.]
+]
+
+]
+.c30[
+.right[![](img/GameOfLife_rules_unknown.jpg)]
+]
+]
+
+.footnote[Image source unknown, found all over the net. Any information appreciated!]
+---
+
+# Patterns in the Game of Life
+
+The rules of the game of life are very simple, but they can give rise to an enormous variety of patterns.
+
+.cols[
+.c40[
+- Stable Patterns
+
+- Periodic Patterns
+
+- Chaotic patterns
+
+- Gliders
+
+- Glider Guns
+]
+.c30[
+![:scale 60%](img/GameOfLife_Beehive.png)
+
+![](img/GameOfLife_Pulsar.gif)
+
+![](img/GameOfLife_SpaceShip.gif)
+]
+.c30[
+![](img/GameOfLife_GliderGun.gif)
+]
+]
+
+
+.footnote[[Wikipedia Article on the Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)]
+
+---
+
+# Let's play with the Game of Life!
+
+.center[
+https://copy.sh/life/
+
+![](img/GameOfLife_anim.gif)
+]
+
+.largetext[
+- Try to build the patterns in the last slide;
+- Try to build the smallest pattern that expands forever;
+- Try to build pretty patterns;
+]
+
+---
+
+# Complexity in the game of Life
+
+.largetext[
+As we saw, the game of life has many patterns: stable patterns, repeating
+patterns, moving patterns. .redtext[Most patterns eventually collapse into stability.]
+
+However, a few rare patterns .greentext[grow forever], always increasing in complexity.
+]
+
+.center[![](img/GameOfLife_Infinite.png)]
+
+.largetext[
+Although the game of life is **completely deterministic**, it is impossible
+to predict if a pattern will grow forever, or eventually stop.
+]
+
+
+---
+
+
+# Computation with the game of Life
+
+.largetext[
+By carefully arranging patterns in the Game Of Life, it is possible to reproduce
+computational results.
+]
+
+.cols[
+.c60[
+.largetext[
+- Gliders transmit information;
+
+- Glider collisions stop information;
+
+- Can construct AND, OR and NOT gates;
+
+- Putting these gates together, we can make programs.
+
+]
+]
+.c40[
+![](img/GameOfLife_OrGate.gif)
+]
+]
+
+.footnote[[Image from Alan Zucconi's fantastic article on Game Of Life](https://www.alanzucconi.com/2020/10/13/conways-game-of-life/)]
+
+---
+
+# Making a Clock with the Game of Life
+
+.center[
+<iframe width="800" height="470" src="https://www.youtube.com/embed/3NDAZ5g4EuU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>]
+
+---
+
+# Limits of Computation With the Game of Life?
+
+.center[
+<iframe width="800" height="470" src="https://www.youtube.com/embed/xP5-iIeKXE8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+]
+
+---
+
+# Conclusion: The Game of Life
+
+.largetext[
+- The game of Life is a **simple, deterministic** system that can generate infinitely complex, unpredictable patterns.
+
+- Characteristics of living systems: Self-replication, Emergence, **Computability**
+
+- Can still be enjoyed at a very small scale too!
+]
+
+.right[
+![:scale 20%](img/GameOfLife_SpaceShip.gif)
+]
+
+---
+
+# Discussion: Is the "Game of Life", Life?
+
+.largetext[
+.boxyellow[
+.boxlabel[Is the Game of Life, Life?]
+- What are **similar** characteristics between Life and the Game of Life?  
+- What are **different** characteristics between Life and the Game of Live?  
+- What are the implications of **computation** in the game of life?  
+- What would happen if we **changed the rules** of the Game of Life?
+]
+
+.right[**Time for a Break!**]
+]
 ---
 layout: true
 
-.sectionname[**Part 02.02:** Artificial Life Systems]
+.sectionname[**Parts 02.03**: A Bird Eye's View of Artificial Life]
 
 ---
 
-# Artificial Life Systems
+# History of Artificial Life: Ancient Origins?
 
-We will study a few examples of Artificial Life Systems, and what we can learn
-from them.
+Humans have always dreamed of creating life with their own hands. In stories, religion, and early science, the creation of life was often a central topic.
 
----
+.cols[
+.c30[
+.center[
+![:scale 90%](img/ancient_robot_1.jpg)
 
-# Diffusion Systems
+19th Century Japanese Automaton
+]
+]
+.c30[
+.center[
+![:scale 90%](img/ancient_robot_2.jpg)
 
----
+The "Digesting Duck"
+]
+]
+.c30[
+.center[
+![:scale 90%](img/ancient_robot_3.jpg)
 
-# Self-Replicating Systems
-
-- Cellular Automata
-- Self-replicators
-  - Self-replications and evolution (more next class!)
-- Artificial Chemistry
-
----
-
-# Artificial Biology
-
-- Avida: Replication of cells, genes and evolution
-
----
-
-# Agency Systems
-
-- What is Agency?
-- Agency of Simple Robots
-- Non-intelligent system with Agency (Oil Drops and Crystal)
-- Agency and Human iteraction
+Leonardo DaVinci's robot
+]
+]
+]
 
 ---
 
-# Alife Simulations
+# Alife and the 80ies
 
-- More complex systems trying to replicate life
+.largetext[
+In the 80ies, the boom of computing caused an increasing awareness of the
+possibilities that these technologies could bring to the field.
+
+.cols[
+.c70[
+- Simulations of Complex Mathematical Models;
+
+- Computer Graphics for visualizing Virtual creatures;
+
+- Computer Visures!
+
+- First ALife Workshop in 1987;
+
+]
+.c30[
+![:scale 100%](img/karlsims_crabarm.jpg)
+]
+]
+]
+.footnote[Image: [1994 Karl Sims evolved creatures](https://www.karlsims.com/evolved-virtual-creatures.html)]
+---
+
+# Artificial Life Today
+
+.largetext[
+Today, Artificial Life is an interdisciplinary field, including biologists, computer scientists, mathematicians, engineers, philosophers and artists.
+
+Research in Artificial Life is usually divided in three large groups:
+
+- **"Soft" Alife**: Research involving simulations and mathematical models;
+
+- **"Hard" Alife**: Research involving robots and physical devices;
+
+- **"Wet" Alife**: Research involving biology and chemistry;
+]
+
+---
+
+# Soft Alife
+
+
+.largetext[
+Soft (Software) alife is the subgroup of Artificial Life research that focuses
+on **computational** approaches.
+
+Soft Alife research usually involves the definition of mathematical models
+of life, and the extensive experimentation of those models using computer
+simulations.
+]
+
+.right[![:scale 30%](img/GameOfLife_GliderGun.gif)]
+
+---
+
+# Soft Alife Example: Reaction-Diffusion systems
+
+**Reaction-Diffusion Systems** are mathematical models that can be used to represent and reproduce biological phenomena .footmark[a] .
+
+R-D systems are usually composed of a equation to describe the .greentext[Diffusion] of elements, and a different equation to describe the .redtext[Reaction] between these elements.
+
+These equations are calculated in an *iterative* fashion, leading to an evolving landscape that can assume very natural-looking characteristics.
+
+.right[![:scale 40%](img/ReactionDifussion_KondoMiura2011.png)]
+
+
+.footnote[
+.footmark[a] - Although Reaction-Diffusion models are used in physics and chemistry too.  
+.footmark[b] - Image from [Kondo and Miura, 2011.](https://www.fisica.unam.mx/personales/gramirez/Fis_Estad_2014/Reac-Dif_as_Framework_for_Understanding_Biological_Pattern_Formation.pdf)
+
+]
+
+---
+
+# Soft Alife Example: Life Simulations
+
+Soft Alife often use **Simulations** to reproduce situations and mechanisms associated with living systems. For example, .greentext[AVIDA] is a simulation that reproduces the process of mutation in single cellular beings.
+
+By changing the parameters of the simulation, we can observe the effect of mutation and resources competition in evolution, and how niches evolve.
+
+We will learn more about AVIDA at the end of the lecture today.
+
+.cols[
+.c40[
+.center[![:scale 60%](img/Avida_logo.png)]
+]
+.c60[
+.center[![:scale 70%](img/Avida_scene.png)]
+]
+]
+
+---
+
+# Soft Alife: Research Concerns
+
+.largetext[
+- **Controlled Experimentation on models of life**: Using the simulation context to re-run a simulation with many different parameters and rules.
+
+- **Emergence of complex systems from simple rules**: Defining the simplest models that exhibit interesting behaviors.
+
+- **Simulation of speculative life forms**: Developing what-if scenarios in silico.
+]
+
+---
+
+# Hard Alife
+
+.largetext[
+
+Hard (Hardware) Alife is the subgroup of alife research focused on devices and
+systems that exist in the world.
+
+This means mainly robots, but not only that.
+
+Differently from Soft Alife, Hard Alife has to deal with the imprecisions and
+uncertainties that we find in the world, and also how artificial creatures
+and the environment interact with each other.
+
+]
+
+---
+
+# Hard Alife Example: T2 Tile Project
+
+Our current computation paradigm is to build extremely fragile machines with incredible efficiency. What if we inverted that paradigm?
+
+Living beings tend to be surprisingly resilient. We continue operating even when hurt, sick, cold, or after suffering tremendous accidents.
+
+The "T2 Tile" project tries to create a computational system that follows this robustness principle. Calculation continues even if unpredictable errors occur in
+the system.
+
+![:scale 40%](img/T2Tile.png)
+
+More on [T2 Tile Project](https://t2tile.com/)
+
+---
+
+# Hard Alife Example: Robots
+
+.cols[
+.c50[
+**Braitenberg Robots**
+
+Two light sensors connected to two engines.
+
+Based on these connections, this simple robot can
+show a variety of "emotions" and "intent".
+
+What is the minimum requirement for agency?
+
+.center[![:scale 70%](img/Braitenberg_robohuborg.gif)
+
+More on [Robothub.org](https://robohub.org/simple-robots-complex-behaviors-a-control-systems-perspective-on-braitenberg-vehicles/)
+]
+
+]
+.c50[
+**Androids (Alter)**
+
+The android learns to react to humans.
+
+The project aims to study the relationship between
+humans and machines, and what it means to be a living machine.
+
+.center[![:scale 70%](img/Alter_Project.png)
+
+More on [Alternative Machine](https://alternativemachine.co.jp/en/project/alter3/)
+]
+]
+]
+
+
+---
+
+# Hard Alife: Research Concerns
+
+.largetext[
+Hard Alife focuses on the relationship between artificial creatures and
+their environment.
+
+Keywords:
+- **Robustness**: How can artificial beings exist in a very complex and unforgiving world?
+- **Embodiment**: How do artificial beings and the environment influence each other?
+- **Agency**: What does it mean for a creature to make choice and to act in the environment?
+]
+
+---
+
+# Wet Alife
+<!-- **TODO** Add image and more content to Wet Alife -->
+
+.largetext[
+Wet Alife is the subgroup of alife research that focuses on the biological: Artificial Chemistries, Physics of Crystal formation, Genetic Engineering, Observation of natural processes, etc.
+
+**Keywords for Wet Alife**: Self-Replication, Autopoiesis;
+]
+
+---
+
+# Art Alife
+
+"Art" alife is the *secret* fourth subgroup of alife. The ideas of Artificial life motivate and inspire us, and many people create wonderful things based on that.
+
+<!-- **TODO**: Add images for art/game alife! -->
+
+.cols[
+.c50[
+.center[**Art**]
+
+- Speculative Biology
+- Virtual Creatures
+- Artistic Exhibitions
+
+![](img/alifeart_theojansen.jpg)
+]
+.c50[
+.center[**Games**]
+
+- Tamagochi;
+- Open-ended Games;
+- Virtual Ecologies;
+- Procedural Generation;
+
+![](img/alifeart_sporegame.jpg)
+]
+]
+
+.footnote[
+Wind Powered Walking Mechanism by [Theo Jansen](https://www.strandbeest.com/).
+
+Spore Game by Maxis
+]
+
+---
+exclude: true
+
+# What is Alife doing today?
+**TODO - in the future**
+
+Things that I saw in the last Alife conference
+
+- Changing the world
+
+- Understanding people
+
+- Exploring space
+
+- And of course, creating many simulations
+
+---
+
+# Discussion and Lunch Break (Also Questions)
+
+.largetext[
+- What are the characteristics of life that the projects introduced here explore?
+
+- Are there other characteristics of life not explored by these projects? How could we explore those?
+]
+
+.right[**Time for a Lunch Break!**]
+
 
 ---
 layout: false
@@ -568,50 +1070,205 @@ class: center, middle
 ---
 layout: true
 
-.right[Section 03: Hands-on practice]
+.sectionname[**Section 03**: Hands-on practice]
 
 ---
 
-# Hands-on Experimentation with Alife Systems
+# Hands-on Experimentation with AVIDA
 
-In this section, I will introduce the following three systems in more detail.
-You are invited to explore these systems by yourself, make your own discoveries,
-and exchange your impressions with others in the class.
+.largetext[
+Let's do some experimentation with the AVIDA simulation.]
 
-- Game of Life
-- Avida
-- The Bibites
+.center[
+![:scale 20%](img/Avida_logo.png)
 
----
-
-# Game of Life Simulation
-
-- What is?
-- How to use?
-- Tasks: Create a long pattern, create a stable pattern, try to create a pattern that generates other patterns.
+https://avida-ed.msu.edu/app/AvidaED.html
+]
 
 ---
 
-# Avida-edu Simulation
+# What is AVIDA?
 
-- What is?
-- How to use?
-- Tasks: Evolution competition. Measure the length of genomes in winning populations. Identify why a mutation becomes dominant.
+.largetext[
+- Digital simulation of Evolution;
 
----
+- Uses the computer to imitate a real process;
 
-# The Bibites Simulation
-
-- What is?
-- How to use?
-- Tasks: Run at advanced speed, and give a name to interesting mutations. Observe which characteristics are helpful or nocive to the creatures. Observe when new mutations start to dominate the population (may take some time!)
+- The scale of a simulation **must** be limited (can't simulate everything);
+  - AVIDA focuses on the effects of genes, mutation and resources;
+]
 
 ---
 
-# Your task for the rest of the day:
+# A Digital Petri Dish
 
-Form pairs or trios, and choose one of the three simulators to explore.
+![](img/avida0.png)
 
-Try to do the tasks suggested, but also explore following your interests and curiosity.
+---
 
-Exchange ideas with your group mates about what you are seeing, and what it could be used for.
+# A Digital Petri Dish
+.cols[
+.c50[
+![](img/avida1.png)
+]
+.c50[
+- The dark grid map is our "digital petri dish"
+
+- It is the environment for the digital creatures
+
+- Each cell in the grid holds one artificial organism
+
+- Space is constrained, so individuals compete for space
+]
+]
+
+
+---
+
+# AVIDA Interface
+
+![](img/avida2.png)
+
+---
+
+# AVIDA Interface
+
+![](img/avida3.png)
+
+---
+
+# Let's take a look at an Organism
+
+.cols[
+.c50[
+- Click on **Organism**
+
+- Drag the @ancestor into the blank space
+
+![:scale 80%](img/avida4.png)
+]
+.c50[
+![:scale 80%](img/avida5.png)
+]
+]
+
+---
+
+# Organisms (Avidians)
+
+.cols[
+.c50[
+![:scale 80%](img/avida6.png)
+]
+.c50[
+- Organisms are composed of simple computer programs.
+
+- Each circle is a computer command.
+  - There are 26 different commands.
+  - Organisms have a total of 50 commands.
+
+- This set of commands is an Avidian's DNA!
+  - a single command is one gene.
+]
+]
+
+---
+
+# Let's Explore the Mutation Rate
+
+![](img/avida7.png)
+
+---
+
+# Effects of Mutation in AVIDA
+
+.cols[
+.c50[
+![:scale 90%](img/avida8.png)
+]
+.c50[
+We know that Avidians have 50 genes:
+- How many genes are expected to mutate with the default mutation rate of 2%?
+- How about if we change the mutation rate to 10%?
+
+Change the mutation rate as you like:
+- Try changing it to 100%
+- Save the resulting offspring in the freezer
+- Run the new offspring. Is it still able to replicate? Why?
+]
+]
+
+---
+
+# Using the Petri Dish
+.cols[
+.c50[
+- Click on **Population**
+- Drag the @ancestor into a cell in the dish
+
+![](img/avida9.png)
+]
+.c50[
+![](img/avidaa.png)
+]
+]
+
+---
+
+# Using the Petri Dish
+
+.largetext[
+- When you run the petri dish, the individual will multiply and and mutate.
+
+- Some mutations may cause the individual to replicate faster. Or inversely, to become unable to mutate.
+
+- You can select new individuals in the petri dish to save them or observe them.
+]
+
+---
+
+# Adding Resources ("nutrients")
+
+.largetext[
+- You can simulate selection pressure by adding resources/nutriends to the environment.
+
+![](img/avidab.png)
+
+- Avidians can collect these resources by replicating these programs inside their genome.
+
+- If the Avidian collect a resource, it will replicate faster.
+]
+
+---
+
+# Hands-on exploring time:
+
+In groups of 2 or 3 people, explore the Alife simulations we saw today. Discuss your findings with each other, ask me questions as you play.
+
+.cols[
+.c45[
+.center[**AVIDA**]
+
+Explore the effects of changing the environment. Evolve Avidians in one environment, save them and transfer them to a different environment.
+
+Make Avidians that evolved in different environments compete.
+
+https://avida-ed.msu.edu/app/AvidaED.html
+]
+.c10[
+
+]
+.c45[
+.center[**Game of Life**]
+
+Create simple patterns with the following characteristics. Balance experimentation, online search, and paper planning.
+
+- Self-reproducing pattern;
+- Stable, complex pattern;
+- Glider Guns and logic gates;
+
+https://copy.sh/life/
+]
+]
+
+**For the Report:** Remember to consider the relationship with your own discipline!

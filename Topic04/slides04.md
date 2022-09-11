@@ -100,3 +100,5 @@ layout: false
 class: center, middle
 
 # Part 05: Hands on Neural Networks
+
+- The Bibites (Alife, Evo, Multi-Agents and Neural Networks)

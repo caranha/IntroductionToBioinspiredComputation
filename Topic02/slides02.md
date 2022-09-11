@@ -75,6 +75,8 @@ layout: true
 
 ---
 
+<!-- TODO: Yesterday we talked about the characteristics of life. We could say that evolution is one characteristic that is common to all life. Is it life that gives rise to evolution, or is it evolution that gives rise to life? Anyway, if we want to create artificial living being, it seems worthwhile to study artificial evolution. -->
+
 # What if computers could evolve?
 
 .largetext[
