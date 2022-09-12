@@ -1,19 +1,21 @@
-# What is this?
+# Introduction to Bioinspired Computation
+*Version 1.0.202209*
 
-Materials for the "Introduction to Bioinspired Computation" intensive course.
-Or "Everything I would like my students to know when they join the laboratory".
+Bioinspired computation is the discipline of taking inspiration from nature
+to develop computational technologies. The goal is develop systems that
+are robust, creative, and can solve a wide variety of problems.
 
-# Under Construction
+This page contains the material for a short intensive course that
+introduces four research areas that I find to be both important and
+representative of Bioinspired Computation.
 
-This project is currently under construction. Please browse responsibly.
+Another way of looking at this page is "Some Things I wish Students Knew
+When they Joined my laboratory".
 
-# Links
+## General Information
 
-## Important Files
-- [Offerings](offerings.md)
-- [Related Readings](readings.md)
 - [Syllabus](syllabus.md)
-- [License](LICENSE.md)
+- [Related Readings](readings.md)
 
 ## Lecture Notes
 - Topic 01: [Artificial Life](Topic01/Intro_ArtificialLife.html)
@@ -22,3 +24,14 @@ This project is currently under construction. Please browse responsibly.
 - Topic 04: [Neural Networks](Topic04/Intro_NeuralNetwork.html)
 - Topic 05: [Final Project](Topic05/Final_Report.html)
 
+# Other Important Links
+- [Offerings](offerings.md)
+- [License](LICENSE.md)
+- [TODO](TODO.md)
+
+# Acknowledgements
+- The lecture notes are rendered using [RemarkJS](https://remarkjs.com/)
+- Jair Pereira: For the materials of the AVIDA tutorial
+- University of Hiroshima: For inviting me to prepare this course
+- University of Tsukuba: For hosting me as a researcher
+- Images in the lecture notes are acknowledged in footnotes on each slide. Please do contact me if I missed somethign important.

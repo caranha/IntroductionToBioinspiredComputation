@@ -1,3 +1,5 @@
+# Readings
+
 The following books, webpage, software, and others were inspirations for this
 course, and are recommended for people who want to learn more about the topics
 discussed in this lecture.
@@ -10,6 +12,7 @@ discussed in this lecture.
 # Websites
 - The Artificial Life Newsletter: https://alife-newsletter.github.io/Newsletter/
 - An Introduction to Alife for those who like AI: https://thegradient.pub/an-introduction-to-artificial-life-for-people-who-like-ai/
+- Alife-AI Presentation: https://slideslive.com/38938221/alifeai-introduction-to-artificial-life?ref=recommended
 - NPR: "Living robots made in a lab can self-replicate" https://www.npr.org/2021/12/01/1060027395/robots-xenobots-living-self-replicating-copy
 
 ## Boids:
