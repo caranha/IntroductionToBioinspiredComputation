@@ -69,7 +69,7 @@ Each lecture is 3 periods of 75 minutes. The last period is used by the students
 - Final presentation and discussion
 
 ## Bibliography
-As this lecture is a "wide tour", we will not follow one specific textbook. However, each of the topics has suggestions of books, papers and other readings for students who want to learn more. See "bibliography.md".
+As this lecture is a "wide tour", we will not follow one specific textbook. However, each of the topics has suggestions of books, papers and other readings for students who want to learn more. See [the readings list](readings.md).
 
 ## Methods of evaluation
 
