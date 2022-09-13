@@ -35,3 +35,10 @@ discussed in this lecture.
 
 ## Papers
 - Kondo and Miura, "Reaction Diffusion as a Framework for Understanding Biological Pattern Formation](https://www.fisica.unam.mx/personales/gramirez/Fis_Estad_2014/Reac-Dif_as_Framework_for_Understanding_Biological_Pattern_Formation.pdf)
+
+## Software
+### Multi Agent System Software
+- Gama: https://gama-platform.org/ -- Spatially Explicit, Own scripting Language
+- Netlogo: https://ccl.northwestern.edu/netlogo/ -- Very traditional, Java
+- MESA: https://mesa.readthedocs.io/en/latest/ -- Python
+- artisoc: https://mas.kke.co.jp/en/artisoc4/ -- Japanese, Mac/Windows only

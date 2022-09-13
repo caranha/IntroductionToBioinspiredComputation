@@ -1,32 +1,38 @@
+The third lecture introduces Multi-Agent Systems as a method to reproduce
+the effects of multiple decisions in parallel.
+
+
 The third lecture talks about Multi-Agent systems, focusing on research projects
 that our group is currently working on.
 
 # Introduction to Multi Agent Systems
-## What are Multi Agent Systems
-## Bioinspired MAS Examples:
-- Boids
-- Predator/Prey Simulation
+- Intro Based on Hasebe's lecture
 
-# Applications of Multi Agent Systems
-## Social Simulation
-- Evacuation Simulation (one room, one city)
-- Epidemics Simulation (probably long)
-- City Generation (Luiz Work)
-- Virtual Archaeology (HOMINIDs)
+## Simple Example of Multi Agent Systems
+- HOMINIDS paper / Digital Archeology
 
-## Games
-- Social Games: AIWolf, Hanabi
-- Multi-Agent Level Generation: Minecraft, GDMC
+## Multi Agent Systems and Genetic Algorithms
+- MAS + Optimization: PSO
+- MAS + TSP: ACO
 
-## Multi Agent Systems in Artificial Life
-- Soft Robots Ecology;
-- Alife with Heterogeneous Agents;
-- Environment Simulations;
+# MAS Projects
+## Tsunami Evacuation (Matsushima)
+## Covid Infection (Epidemicon)
+## Minecraft Settlement Generation
+## AIWolf
 
-# Issues in Multi Agent Systems
-- How to represent the knowledge of an agent?
-- How to represent the knowledge of OTHER agents (AIWolf)
-- How to use data from Human societies in MAS
+# Open Issues in Multi Agent Systems
+- Complex vs Simple Models (Digital Archeology)
+- Representing Knowledge (AIWOlf)
+- Using data from societies (Epidemicon) (validation, learning, ethical issues)
 
 # Hands-on Learning
-- Boids, Something else?
+- GAMA Platform
+- Quickly mention that there are other platforms, then show how to use GAMA
+
+# Notes:
+## Multi-Agent System Software:
+- Gama: https://gama-platform.org/ -- Spatially Explicit
+- Netlogo: https://ccl.northwestern.edu/netlogo/ -- Very traditional
+- MESA: https://mesa.readthedocs.io/en/latest/ -- Python
+- artisoc: https://mas.kke.co.jp/en/artisoc4/ -- Japanese, Mac/Windows only, not opensource
