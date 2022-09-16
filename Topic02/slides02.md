@@ -440,54 +440,94 @@ layout: true
 
 ---
 
-# Solving Hard Problems with EvoComp
-- Evolutionary Computation can help us to solve problems that we
-don't know the answer for.
-  - We know what the final solution should do, but we don't know what it looks
-  like
-  - Just set a fitness function and go!
+# When is Evolutionary Computation Useful?
+
+.largetext[
+.greentext[Genetic Algorithms] were first proposed in the 80ies. Since then, we
+have found that GA is very useful to solve .greentext[Optimization Problems].
+
+GA is particularly useful for problems with these characteristics:
+1. It is easy to define what is a good or bad solution.
+2. It is hard to calculate a good solution from scratch.
+3. We are satisfied if the solution is "good enough"
+]
 
 ---
 
-# Evolutionary Algorithm and Optimization
+# Genetic Algorithms and Optimization
 
 - Find the number that maximize some fitness function
 - Applications: Design (Bullet train, Antenna, Underwater)
 
-- *Optimization*
+.center[
+.cols[
+.c50[
+Finding a Design for *Shinkansen* nose cones;
+
+![:scale 90%](img/GA_N500.png)
+
+]
+.c50[
+Finding a Design for satellite antennas;
+
+![:scale 80%](img/GA_Sattelite.png)
+]
+]]
 
 ---
 layout: true
 
-.sectionname[**Part 02.02:** Evolutionary Optimization Examples]
+.sectionname[**Part 02.02:** Evolutionary Computation Application Examples]
 
 ---
 
-# Evolutionary Algorithms for Optimization
-- Example 1: Lunar landing problem
+# GA Research Example: Traveling Salesman Problem
+- Explain the Traveling Salesman Problem
+  - What it is (map)
+  - why it is important (applications and implications for CS)
+  - Why it is good for solving with GA (no clear way to create solution)
+- Explain how to solve it using GA
+  - Explain how to represent with a genome
+  - Explain how to use mutations and crossover
 
-- Example 2: Travelling Salesman problem
+---
 
-- Message: Different problems, different implementations.
+# GA Research Example: Underground Reservoir Optimization
+- Problem Description: Why this problem is important
+- How to solve it using GA
+  - Parameter Optimization
+  - Challenge: Multi-Objective Optimization
+  - How to solve MOP using GA: Decomposition
+- Research Results
 
 ---
 layout: true
 
-.sectionname[**Part 02.03:** Issues in Evolutionary Optimization]
+.sectionname[**Part 02.03:** Research Issues in Evolutionary Optimization]
 
 ---
 
 # Issues with Evolutionary Computation for Optimization
+- GA is very good, but it has some open issues
 - The optimal solution is not guaranteed! (Good enough for hard problems, not so good for easy problems)
 - It takes time (Parallel Evolutionary Algorithm)
 - Needs to choose many parameters (Diversity and Island Model)
 - Many parameters to choose (Exploration vs Exploitation)
-
 - You usually want to use domain knowledge too!
 
 ---
 
-# (Advanced) How to implement Evocomp -- Recommended Libraries.
+# How to implement Evocomp -- Recommended Libraries.
+- Self-Implementation: Actually not that hard!
+- Python: DEAP
+- Java: ECJ
+
+---
+
+# Discussion Time:
+- What kind of problems would you like to solve using Genetic Algorihtms?
+- How would you describe that problem in a way that a GA can solve it?
+  - Remember: Fitness Function, Representation, Crossover
 
 ---
 layout: false
@@ -516,18 +556,40 @@ class: center, middle
 # Part 04: Extra topics in Evolutionary Computation
 
 ---
+# Extra topics in Evolutionary Computation
+
+---
 layout: true
 
-.sectionname[**Part 04.01**: Extra Topics]
+.sectionname[**Part 04.01**: How Evolution Can Surprise Us]
+
+---
+# How Evolution can Surprise us
+- Traditional story about surprising evo and sine wave
+- Surprising Evolution Paper
+- Why evolution does this? Defining a good fitness function and "cheating"
+- This makes evolutionary computation fun.
+
+---
+# From Life to Simulation, Back to Life
+(xenobots)
 
 ---
 
-# Extra topics in Evolutionary Computation
-- Evolutionary Computation and Artificial Life
-- How Evolution can Surprise Us
-- Open Ended Evolution
-- From life to simulation to live (xenobots)
-- (Advanced) Genetic Programming
+# Genetic Programming
+
+- What if we could evolve *Programs*
+- Self-reproducing programs
+- Problems with the halting problem.
+
+---
+
+# Open Ended Evolution: The final Frontier
+- Current Evolutionary Algorithms are usually *Optimization* Algorithms
+- EC can be used to find the best car, best route, best x
+- But natural evolution can find a huge VARIETY of Creatures
+- This is OEE. Can we create OEE with EC? What is necessary to achieve OEE?
+- Environment? Computer Power? Representativeness?
 
 ---
 layout: false
@@ -546,4 +608,3 @@ layout: true
 - Fitness Landscape Explorer
 - Box2D Evolver
 - Art Breeder
-- Soft Bot Evolver

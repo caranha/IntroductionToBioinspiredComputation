@@ -247,7 +247,6 @@ in the world that we are interested in. By validating and studying the MAS, we u
 
 2. **Model Analysis**: The focus is to use a model that already exist and has been validated to explore variations in the initial conditions, and see how they affect the final result. This is of particular interest to policy analysis, engineering, etc.
 
-
 ---
 layout: true
 
@@ -255,49 +254,139 @@ layout: true
 
 ---
 
-# Multi Agent System Research Example: HOMINIDS
+# "HOMINIDS: An agent-based spatial simulation model to evaluate behavioral patterns on early Pleistocene hominids"
 
-- Paper name and info
+Cameron S. Griffth, Byron L. Long, Jeanne M. Sept  
+Ecological Modelling, 221, 2010
 
-- General Question
+.largetext[
+*"The Hominids ABM simulates the actions of two species of proto-human agents, who attempt to subsist by foraging on a spatially explicit landscape. The landscape is described based on empirical field data collected in East Africa."*
 
----
-
-# HOMINIDS Proposal
-
-- Research approach: Design a system based on hypothesis
-
-- Run the simulation, and see if it follows the observed data
+- Simulation based on archeological evidence;
+- Using the simulator as basis for scientific hypothesis;
+- Hypothesis may predict what to look for in the field;
+]
 
 ---
 
 # HOMINIDS Model
 
-- Describe the model here
+.cols[
+.c60[
+![:scale 90%](img/Hominids_model1.png)
+]
+.c40[
+![:scale 90%](img/Hominids_model2.png)
+]
+]
 
 ---
 
 # HOMINIDS Results
 
+Differences in behavior were measured for different environments, species and abilities.
+
+.center[![:scale 100%](img/Hominids_results.png)]
+
 ---
 
-# HOMINIDS Future
+# HOMINIDS Future -- Digital Archeology
 
-- Chemistry
+.cols[
+.c50[
+- It would be nice to know the specific plants that grew in the area under study;
 
-![:scale 40%](img/GreenLake_Short.gif)
+- Analysis of chemical biomarkers on archeological digs can tell us about leaf coverage and plant species;
+
+- We collaborate with the Heriot Watt University (Scotland) to improve the HOMINIDS model;
+
+- We expect even more reliable models from this research;
+
+]
+.c50[
+.center[
+Initial steps for the Chemistry Aware model.
+
+![:scale 95%](img/GreenLake_Short.gif)
+]]
+]
+
+---
+# Discussion: Multi Agent System Research
+
+.largetext[
+Let's gather in groups, and discuss research questions that we could ask using Multi Agent Systems. Consider the following points:
+
+- What is the question that you would like to investigate?
+- How do you design a model to answer that question?
+  - What is the environment, and what are the agents?
+  - How do the agents interact with the environment?
+  - How do the agents interact with each other?
+- Remember that a model does not need to be too complicated!
+- What information do you want to observe from your model?
+]
+
+.right[**Time For a Break!**]
 
 ---
 layout: true
 
-.sectionname[**Part 01.02**: Bioinspired MAS]
+.sectionname[**Part 01.03**: Bioinspired MAS]
 
 ---
-# Bioinspired, MAS Algorithms
+# Bioinspired Algorithms using MAS
 
-- MAS for the Travelling Salesman Problem: Ant Colony Optimization algorithm.
+.largetext[
 
-- MAS for Optimization: Particle Swarm Optimization
+To finish this introduction to MAS models, let's see two optimization algorithms inspired by MAS models.
+
+.greentext[Ant Colony Optimization]:  
+Application of MAS principles for the Traveling Salesman Problem.
+
+.greentext[Particle Swarm Optimization]:  
+Application of MAS principles for Genetic Algorithms.
+]
+
+---
+# Ant Colony Optimization
+
+.cols[
+.c60[
+- Traveling Salesman Problem Reminder: Find a path that visits all the cities in a map with minimal cost.
+
+- In nature, Ants find efficient paths to food sources when foraging.
+  - When one ant finds a food source, they go back to the nest and leave pheronome signals.
+  - Other ants follow the pheromone signal. If they find the food source, they reinforce the signal.
+
+- Can we design an algorithm to solve TSP using the principles of ant foraging?
+]
+.c40[
+.center[![:scale 90%](img/Wikipedia_AntTrail.jpg)]
+]
+]
+
+---
+# Ant Colony Optimization Procedure
+
+.largetext[
+1. Initially, .redtext[N] ant agents walk the graph randomly until all cities or a maximum length is reached.
+
+2. Calculate the route size of each agent.
+
+3. Each agent leaves pheromone in its trail,  
+inversely proportional to the route size.
+
+4. All agents walk the graph again.  
+This time, the walk is weighted by the amount of pheromone.
+
+5. Return to 2.
+]
+
+---
+# Ant Colony Optimization Results
+
+---
+# Particle Swarm Optimization
 
 ---
 layout: false
@@ -364,6 +453,37 @@ layout: true
 # Issues in Multi Agent Systems
 - Representing Knowledge (AIWolf)
 - Using data from humans for learning (Mobility Learning)
+
+---
+
+# Representing Knowledge in Multi Agent Systems
+
+- When two people interact in a social context, what they know about each other, and about the world, is an important factor.
+- However, representing the knowledge of Agents in a MAS is a hard, still untreated problem
+
+---
+
+# Representing Knowledge in Multi Agent Systems
+
+- Knowledge as Logic Statements
+- Knowledge as Databases
+- Knowledge as Rules
+
+But what about Learning? And Circular Knowledge?
+
+---
+
+# The AIWolf Project
+
+It has many objectives, but I particularly find the representation of knowledge to be a key part of the problem.
+
+---
+
+# Using Data in Multi Agent Systems
+
+We use data for:
+- Validating existing systems
+- Setting Parameters in New Systems
 
 ---
 layout: false
