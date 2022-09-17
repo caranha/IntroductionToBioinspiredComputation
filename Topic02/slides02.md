@@ -18,19 +18,14 @@ name: toc
 
 # Outline for Today:
 
-## 01 - Introduction:
-- What is evolution and why do we want it on our computers?
+## 01 - Basic Concepts of Evolutionary Computation;
 
-## 02 - Evolutionary Computation:
-- How to create a computer System that evolves? What can we do with it?
+## 02 - Applications of Evolutionary Computation;
 
 ## 03 - Human in the Loop: Interactive Evolutionary Computation
-- Humans and computers Collaborating for more interesting evolution.
 
-<!-- - Example: Room Layout Design; Making Art with Evolutionary Computation; Example: "Breeding" Art -->
-
-## 04 - Evolutionary Computation and Artificial Life
-- Open Ended Evolution -- The Final Challenge
+## 04 - Extra Topics in Evolutionary Computation;
+- Research Issues, Artificial Life and Open Ended Evolution
 
 ## 05 - Hands-on Practice with Evolutionary Computation
 
@@ -431,44 +426,51 @@ that can improve itself.
 layout: false
 class: center, middle
 
-# Part 02: Evolutionary Computation and Optimization
+# Part 02: Applications of Evolutionary Computation
 
 ---
 layout: true
 
-.sectionname[**Part 02.01**: EvoComp and Optimization]
+.sectionname[**Part 02.01**: Evocomp and Optimization]
 
 ---
 
-# When is Evolutionary Computation Useful?
+# Where do we use Evolutionary Computation?
 
 .largetext[
 .greentext[Genetic Algorithms] were first proposed in the 80ies. Since then, we
 have found that GA is very useful to solve .greentext[Optimization Problems].
 
-GA is particularly useful for problems with these characteristics:
-1. It is easy to define what is a good or bad solution.
-2. It is hard to calculate a good solution from scratch.
-3. We are satisfied if the solution is "good enough"
+**Optimization Problems**:
+
+- We want to find a set of values that form a **solution**;
+- A good solution maximizes a given **quality criteria**;
+- Sometimes, there are **constraint criteria** to the solutions;
+
+We will see a few examples of optimization problems in the following slides.
+Many industrial problems can be described as optimization problems.
 ]
 
 ---
 
-# Genetic Algorithms and Optimization
+# When are GAs useful in Optimization?
 
-- Find the number that maximize some fitness function
-- Applications: Design (Bullet train, Antenna, Underwater)
+.largetext[
+- It is easy to test if a solution is good or bad;
+- It is hard to calculate how to improve an existing solution;
+- We are interested in "**Creative**" solutions to the problem;
+]
 
 .center[
 .cols[
 .c50[
-Finding a Design for *Shinkansen* nose cones;
+GA finds a Design for *Shinkansen* nose cones;
 
 ![:scale 90%](img/GA_N500.png)
 
 ]
 .c50[
-Finding a Design for satellite antennas;
+GA finds a Design for satellite antennas;
 
 ![:scale 80%](img/GA_Sattelite.png)
 ]
@@ -477,18 +479,124 @@ Finding a Design for satellite antennas;
 ---
 layout: true
 
-.sectionname[**Part 02.02:** Evolutionary Computation Application Examples]
+.sectionname[**Part 02.02:** Examples of Applications]
 
 ---
 
-# GA Research Example: Traveling Salesman Problem
-- Explain the Traveling Salesman Problem
-  - What it is (map)
-  - why it is important (applications and implications for CS)
-  - Why it is good for solving with GA (no clear way to create solution)
-- Explain how to solve it using GA
-  - Explain how to represent with a genome
-  - Explain how to use mutations and crossover
+# The Traveling Salesman Problem (TSP)
+
+.largetext[
+The Traveling Salesman Problem is a classical example of an optimization problem:
+
+> **Find the shortest route that visit all points in a map**.
+
+The TSP has obvious applications for navigation, trains, delivery... but it is also useful for circuit design and many other applications!
+]
+
+.center[
+.cols[
+.c30[
+![:scale 90%](img/TSP0.png)
+]
+.c30[
+![:scale 90%](img/TSP1.png)
+]
+.c30[
+![:scale 90%](img/TSP2.png)
+]
+]]
+
+---
+
+# TSP and Genetic Algorithms
+
+.largetext[
+The TSP is a good match to be solved using Genetic Algorithms:
+
+- It is easy to measure if a solution is good or bad.  
+(Just measure the length)
+
+- It is hard to improve an existing solution.
+
+How can we create a GA to solve the TSP?
+]
+
+
+.boxyellow[
+.boxlabel[The NP-Complete Problem Class]
+
+In Computer Science, the TSP is part of what is called an "NP-Complete"
+problem. The theoretical definition is not in the scope of this material,
+but it indicates a set of problems that proved to be difficult (for current
+computers), and of important theoretical value.
+]
+
+---
+
+# Solving the TSP using GA: Genetic Encoding
+
+.largetext[
+As in the *Corridor* example, a GA needs: An Encoding, A fitness function, and crossover / mutation.
+
+A solution can be represented as a list of numbers. Each number indicates **The next city to visit, out of all remaining cities**.
+]
+
+.cols[
+.c50[
+```
+            6 5 4 3 2 1
+Solution 1: 1 5 1 1 2 1
+```
+![:scale 80%](img/TSP1.png)
+]
+.c50[
+```
+            6 5 4 3 2 1   
+Solution 2: 1 1 1 1 1 1
+```
+![:scale 80%](img/TSP2.png)
+]
+]
+
+---
+
+# Solving the TSP using GA: Fitness Function
+
+.largetext[
+As in the *Corridor* example, a GA needs: An Encoding, A fitness function, and crossover / mutation.
+
+The fitness function is **The total distance of the route**.
+]
+
+.cols[
+.c50[
+```
+Solution 1: 1     5   1     1   2     1
+Fitness:    1.4 + 1 + 1.4 + 1 + 1.4 + 1 + 3
+```
+![:scale 80%](img/TSP1.png)
+]
+.c50[
+```
+Solution 1: 1     1   1   1   1   1
+Fitness:    1.4 + 1 + 1 + 1 + 1 + 1 + 1.4
+```
+![:scale 80%](img/TSP2.png)
+]
+]
+
+---
+
+# Solving the TSP using GA: Fitness Function
+
+.largetext[
+As in the *Corridor* example, a GA needs: An Encoding, A fitness function, and crossover / mutation.
+
+The mutation and crossover can be programmed the same as in the Corridor Example:
+
+- **Mutation**: Replace one number in the Genome with another valid number
+- **Crossover**: Choose two parents, and switch part of their genome
+]
 
 ---
 
@@ -499,6 +607,11 @@ layout: true
   - Challenge: Multi-Objective Optimization
   - How to solve MOP using GA: Decomposition
 - Research Results
+
+---
+# GA Research Example: Reproducing Images
+
+https://chriscummins.cc/s/genetics/#
 
 ---
 layout: true
@@ -543,11 +656,27 @@ layout: true
 ---
 
 # Interactive Evolutionary Computation
-- Interactive Evolutionary Computation: Putting the human in the loop
+
+---
+# Interactive Evolutionary Computation Example: Pic Breeder
+- A quick look: https://nbenko1.github.io/#/
+- How it works
+
+---
+# Novelty Search: Evolution without an Objective
+- Interesting discussion: Going straight to the desired image does not work
+- Novelty guided evolution
+
+---
+# Research Example:
 - Evolutionary Algorithm for Room Layout Design
-- Evolutionary Algorithm to reproduce a picture with rectangles
-- "Breeding" Art
-- "Evolution without an Objective" and Novelty Search
+
+---
+# Issues in Interactive Evolutionary Computation
+- How to not tire the human (Evolution is slow!)
+  - Collaboration between human fitness and computer fitness
+  - Several levels of evolution
+- How to use subjective evaluation
 
 ---
 layout: false
@@ -571,10 +700,10 @@ layout: true
 - This makes evolutionary computation fun.
 
 ---
+exclude: true
+
 # From Life to Simulation, Back to Life
 (xenobots)
-
----
 
 # Genetic Programming
 
@@ -605,6 +734,22 @@ layout: true
 ---
 
 # Hands On Evolutionary Computation
-- Fitness Landscape Explorer
-- Box2D Evolver
-- Art Breeder
+## Fitness Landscape Explorer:
+- https://adaptive.land/
+- https://adaptive.land/coevolution.html
+
+Study what makes Evolution work or not work.
+
+## Car Evolution
+- https://rednuht.org/genetic_cars_2/
+
+Try different parameters for evolution.
+You can evolve one car against others.
+
+## Human Interaction Art Breeder
+- Pic Breeder: https://nbenko1.github.io/#/
+
+Evolve interesting images. What other sort of art would be interesting to evolve?
+
+## Reproducing Images
+https://chriscummins.cc/s/genetics/#
