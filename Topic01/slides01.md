@@ -451,7 +451,47 @@ layout: true
 
 ]
 
-An inspiring, boundless idea, but also a bit vague. What exactly "to reproduce life?" means?
+---
+
+# Alife: To create Life Forms Artificially
+
+.largetext[But what is Life? Something that grows and reproduces?]
+
+.cols[
+.c70[
+.center[
+Salt crystals grow, and they create new crystals
+
+![:scale 95%](img/salt_crystal_growth.jpg)
+]
+]
+.c30[
+.center[
+Videogame creatures grow and reproduce too.
+
+![:scale 95%](img/Agent_minecraftVillagers.jpg)
+]
+]
+]
+
+---
+
+# What separates "Life" from "Non Life"?
+
+.largetext[
+- Ability to grow and reproduce?
+
+- Interact with the environment?
+  - **Purposefully** interact with the environment?
+
+- To have some sort of chemistry?
+
+- To have a constant existence?
+
+- To be an entropy-negative system?
+
+**Defining Life is already a hard research problem!**
+]
 
 ---
 
@@ -485,9 +525,9 @@ Considering these questions is the key to "Alife"!
 
 ---
 
-# Life from first Principles
+# Don't forget microscopic life either!
 
-Tamagochi and robots are cute, but **the majority of life on earth is invisible to our eyes**.
+.largetext[Tamagochi and robots are cute, but **the majority of life on earth is invisible to our eyes**.]
 
 .cols[
 .c60[
@@ -767,6 +807,19 @@ layout: true
 
 ---
 
+# Quick Recap of Artificial Life
+
+.largetext[
+- Research to manufacture life forms.
+
+- But what is life?
+
+- Create life-like systems to understand the characteristics of life
+
+- And maybe learn something else useful in the way!
+]
+
+---
 # History of Artificial Life: Ancient Origins?
 
 Humans have always dreamed of creating life with their own hands. In stories, religion, and early science, the creation of life was often a central topic.
@@ -854,7 +907,7 @@ simulations.
 
 ---
 
-# Soft Alife Example: Reaction-Diffusion systems
+# Reaction-Diffusion systems
 
 **Reaction-Diffusion Systems** are mathematical models that can be used to represent and reproduce biological phenomena .footmark[a] .
 
@@ -873,7 +926,7 @@ These equations are calculated in an *iterative* fashion, leading to an evolving
 
 ---
 
-# Soft Alife Example: Life Simulations
+# Life Simulations
 
 Soft Alife often use **Simulations** to reproduce situations and mechanisms associated with living systems. For example, .greentext[AVIDA] is a simulation that reproduces the process of mutation in single cellular beings.
 
@@ -908,31 +961,26 @@ We will learn more about AVIDA at the end of the lecture today.
 
 .largetext[
 
-Hard (Hardware) Alife is the subgroup of alife research focused on devices and
-systems that exist in the world.
+Hard (Hardware) Alife research focuses on hardware: Usually robots, but also other devices.
 
-This means mainly robots, but not only that.
-
-Differently from Soft Alife, Hard Alife has to deal with the imprecisions and
-uncertainties that we find in the world, and also how artificial creatures
-and the environment interact with each other.
-
+Because it exists in the real world, .greentext[Hard Alife] has to deal with the imprecisions and uncertainties of our world, and also how very different agents (and the environment!) interact with each other.
 ]
+
+.right[![:scale 30%](img/irasutoya_robot.png)]
 
 ---
 
-# Hard Alife Example: T2 Tile Project
+# Hard Alife: Research Concerns
 
-Our current computation paradigm is to build extremely fragile machines with incredible efficiency. What if we inverted that paradigm?
+.largetext[
+Hard Alife focuses on the relationship between artificial creatures and
+their environment.
 
-Living beings tend to be surprisingly resilient. We continue operating even when hurt, sick, cold, or after suffering tremendous accidents.
-
-The "T2 Tile" project tries to create a computational system that follows this robustness principle. Calculation continues even if unpredictable errors occur in
-the system.
-
-![:scale 40%](img/T2Tile.png)
-
-More on [T2 Tile Project](https://t2tile.com/)
+Keywords:
+- **Robustness**: How can artificial beings exist in a very complex and unforgiving world?
+- **Embodiment**: How do artificial beings and the environment influence each other?
+- **Agency**: What does it mean for a creature to make choice and to act in the environment?
+]
 
 ---
 
@@ -973,19 +1021,30 @@ More on [Alternative Machine](https://alternativemachine.co.jp/en/project/alter3
 
 ---
 
-# Hard Alife: Research Concerns
+
+# Computers like Life: T2 Tile Project
 
 .largetext[
-Hard Alife focuses on the relationship between artificial creatures and
-their environment.
+Consider our current computers. Very fast, very precise, .red[very fragile!]
 
-Keywords:
-- **Robustness**: How can artificial beings exist in a very complex and unforgiving world?
-- **Embodiment**: How do artificial beings and the environment influence each other?
-- **Agency**: What does it mean for a creature to make choice and to act in the environment?
+On the other hand, living beings are surprisingly resilient. We can get hurt or sick and still keep living.
+
+Is it possible to create a new computer architecture that is resilient like life? The secret might be .greentext[distributed and asynchronous] architecture.
 ]
 
+.right[![:scale 30%](img/T2Tile.png)]
+
+.footnote[More on [T2 Tile Project](https://t2tile.com/)]
+
 ---
+
+# More about T2 Tile Project (8m)
+
+.center[
+<iframe width="1000" height="500" src="https://www.youtube.com/embed/ZDq4S4YROqM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+]
+---
+
 
 # Wet Alife
 <!-- **TODO** Add image and more content to Wet Alife -->
@@ -1030,6 +1089,19 @@ Wet Alife is the subgroup of alife research that focuses on the biological: Arti
 Wind Powered Walking Mechanism by [Theo Jansen](https://www.strandbeest.com/).
 
 Spore Game by Maxis
+]
+
+---
+# Especulative Biology:
+
+.center[
+![:scale 70%](https://alife-newsletter.github.io/Newsletter/images_edition_007/astrovitae_intro_1.jpg)
+
+.largetext[[Astrovitae Magazine](https://www.astrovitae.com/)]
+]
+
+.largetext[
+And so many books and stories...
 ]
 
 ---

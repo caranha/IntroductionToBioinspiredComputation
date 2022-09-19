@@ -600,92 +600,388 @@ The mutation and crossover can be programmed the same as in the Corridor Example
 
 ---
 
-# GA Research Example: Underground Reservoir Optimization
-- Problem Description: Why this problem is important
-- How to solve it using GA
-  - Parameter Optimization
-  - Challenge: Multi-Objective Optimization
-  - How to solve MOP using GA: Decomposition
-- Research Results
+# Model Parameter Optimization Problem
+
+.largetext[
+A computational **Model** is a tool used in several applications for prediction
+and decision making. For example, we can use cloud movements for weather forecast.
+
+Many models depend on **parameters** for their correct functioning. For example:
+- Weather forecast model depends on the air composition and speed at different locations.
+- A seismic model (used for prediction of geothermal) depends on the permeability and porosity of rock layers.
+
+GA can be used to find optimal values for these parameters.
+]
 
 ---
-# GA Research Example: Reproducing Images
 
-https://chriscummins.cc/s/genetics/#
+# Underground Reservoir Model Optimization
+
+.cols[
+.c70[
+- Underground Reservoirs include water, gas and oil Reservoirs, as
+well as Carbon Capture Reservoirs.
+
+- Well tuned models are important for planning and decision making.
+
+- Direct observation is impossible, so the model parameters are tuned
+based on partial data observed from the surface (wells, seismic stations);
+
+- Problem Objective: Find the computational model that reproduce the surface
+data best!
+
+**Related Research**
+- Aranha, Tanabe, Chassagne and Fukunaga, 2015
+- Chassagne, Aranha, 2020
+- He, Aranha, Hallam, Chassagne, 2022
+]
+.c30[
+.center[![:scale 85%](img/ReservoirModel_2.png)]
+]
+]
+
+---
+
+# Model Optimization Issue: Well, actually...
+
+.cols[
+.c50[
+.largetext[
+A key characteristic of this problem is that the optimization of underground reservoir models is based on .greentext[data observed from several wells].
+
+Each well is represented as a fitness function. However, in general, computational models .redtext[cannot fit different wells at the same time!]
+]
+]
+.c50[
+.center[
+PUNQ Underground Model,  
+with several output wells
+
+![:scale 90%](img/ReservoirModel_1.png)]
+]
+]
+
+
+.largetext[How can we solve this fitness function conflict?]
+
+---
+# Optimization of Multi-Objective Problems
+
+.largetext[In many cases, optimization problems have **several objectives** that cannot be all satisfied at the same time. We call this situation a  
+.greentext[Multi-Objective Problem (MOP)].]
+
+.cols[
+.c50[
+![:scale 95%](img/multiobjective_dominance.png)
+]
+.c50[
+**Non-dominance**: We say that two solutions in a MOP are "non-dominated", if each solution is better than the other one in at least one objective.
+
+When solving an MOP, the objective of the algorithm changes from .redtext["find the best solution"] to .greentext["find the set of optimal non-dominated solutions"].
+]
+]
+
+---
+# Optimization of MOPs: NSGA II
+
+.largetext["Nondominated Sorting Genetic Algorithm II" (NSGA2) is a standard algorithm for solving multiobjective optimization problems.
+
+NSGA 2 replaces the traditional fitness function with a "nondominated rank".
+]
+
+.center[![:scale 65%](img/multiobjective_nsga2.png)]
+
+---
+# GA for Art Generation
+
+.center[
+![](img/GA_Art_0.png)
+]
+
+.largetext[
+With a little bit of creativity, we can create interesting artworks using Genetic Algorithms.
+]
+
+
+You can test this demo at https://chriscummins.cc/s/genetics/#
+
+---
+# GA for Art Generation
+
+.cols[
+.c50[
+![:scale 90%](img/GA_Art_1.gif)
+
+]
+.c50[
+.largetext[
+How does it work?
+- Each image is made of several polygons;
+- **Genome**: the x,y position of each polygon vertex;
+- **Fitness**: the distance between the GA image and the original;
+- **Mutation**: Same as usual!
+]
+]
+]
+
+.largetext[
+**GA For Art**: GA follows the fitness function. Carefully chosen function can generate other creative images!
+]
 
 ---
 layout: true
 
-.sectionname[**Part 02.03:** Research Issues in Evolutionary Optimization]
+.sectionname[**Part 02.03:** Discussion Topics]
 
 ---
 
-# Issues with Evolutionary Computation for Optimization
-- GA is very good, but it has some open issues
-- The optimal solution is not guaranteed! (Good enough for hard problems, not so good for easy problems)
-- It takes time (Parallel Evolutionary Algorithm)
-- Needs to choose many parameters (Diversity and Island Model)
-- Many parameters to choose (Exploration vs Exploitation)
-- You usually want to use domain knowledge too!
+# Three Open Issues with GA for Optimization
+
+.cols[
+.c70[
+.largetext[
+1-  The optimal solution is not guaranteed:
+]
+
+GA can find very good solutions, but is not guaranteed to find the Optimal solution to a problem (.greentext[Good Enough])
+
+This happens because GA is a "search-based" optimization method: It tries several solutions, but not all of them. It might miss the location of the optimal solution.
+
+What can we do about this?
+- **Increase diversity**: If we can find the "region" of the optimal solution, it is more likely that we can find it.
+- **Restart Strategy**: When GA starts to repeat solutions, we re-start it with a new initial population.
+- **Consider the problem carefully**: Is the Optimal solution really necessary?
+
+]
+.c30[
+![:scale 95%](img/irasutoya_TODO.jpg)
+]
+]
 
 ---
 
-# How to implement Evocomp -- Recommended Libraries.
-- Self-Implementation: Actually not that hard!
-- Python: DEAP
-- Java: ECJ
+# Three Open Issues with GA for Optimization
+
+.cols[
+.c70[
+.largetext[
+2- GA takes a lot of time;
+]
+
+The evolutionary loop of a GA can take a lot of time. Compared with mathematical optimization algorithms such as hill climbing and integer programming, GA takes an order of magnitude more iterations to find a solution.
+
+What can we do about this?
+- **Parallelism**: It is very easy to program a GA to take advantage of super computer systems or parallel systems. GA is not accelerated by GPUs, but an older computer with many cores can run GP faster.
+
+- **Improve the Genome**: The speed of GA is determined by the size of the search space, and the size of the search space is determined by the Genome. A good choice of Genome will make the GA faster.]  
+
+
+.c30[
+![:scale 95%](img/irasutoya_TODO.jpg)
+]
+]
 
 ---
 
-# Discussion Time:
-- What kind of problems would you like to solve using Genetic Algorihtms?
-- How would you describe that problem in a way that a GA can solve it?
-  - Remember: Fitness Function, Representation, Crossover
+# Three Open Issues with GA for Optimization
+
+.cols[
+.c70[
+.largetext[
+3- GA has many parameters to choose;
+]
+
+A standard GA has several parameters to choose from: Population Size, Mutation Rate, Crossover Rate, Type of crossover, etc. The performance of the GA depends on the choice of parameter for each problem!
+
+
+What can we do about this?
+- **Algorithms with less parameters**: Developing new algorithms such as the CMA-ES, that have fewer or no parameters, is an ongoing path of research. However, parameter-less algorithms tend to be too generalist, and do not exploit characteristics of particular problems.
+
+- **Auto-adaptive Algorithms**: Auto-adaptive algorithms are those that change the values of their parameters during the execution. For example, if the diversity is too low, an auto-adaptive algorithm will increase the mutation rate.
+
+]
+.c30[
+![:scale 95%](img/irasutoya_TODO.jpg)
+]
+]
+
+
+---
+
+# How to implement Genetic Algorithms?
+.largetext[
+Programming a Genetic Algorithm by yourself is not hard!  
+(In fact, it is one of the appeals of the method...)
+
+However, there are many libraries. Some that I use:
+
+- **Python**: [DEAP](https://github.com/deap/deap) (Distributed Evo Algo in Python)
+
+![:scale 20%](img/deap_logo.png)
+
+- **Java**: [ECJ](https://cs.gmu.edu/~eclab/projects/ecj/) (Evo. Computation in Java)
+]
+
+---
+
+# Discussion Time: Applications of GA
+
+.largetext[
+- Make groups of 2 or 3 people;
+
+- Think about problems in your own discipline that you could try to solve using Genetic Algorithms;
+  - Consider the **Fitness Function** and the **Genome Representation** of these problems;
+
+  - Optimization problems are usually easier, but don't be afraid to think of weird examples (like GA Art!)
+]
+
+.right[**Time for a Long Break!**]
 
 ---
 layout: false
 class: center, middle
 
-# Part 03: Human in the Loop: Interactive Evolutionary Computation
+# Part 03  
+# Human in the Loop:
+# Interactive Evolutionary Computation
 
 ---
 layout: true
 
-.sectionname[Part 03.01: Iteractive EvoComp]
+.sectionname[Part 03.01: Iteractive Evolutionary Computation]
 
 ---
 
-# Interactive Evolutionary Computation
+# How do we evaluate art?
+
+.largetext[
+We talked about using GA for creating art. In that system, the .greentext[Fitness Function] was the difference between the GA and the target image.
+
+.center[
+![:scale 60%](img/GA_Art_0.png)
+]
+
+What should be the fitness function for **new, creative images**?
+]
 
 ---
-# Interactive Evolutionary Computation Example: Pic Breeder
-- A quick look: https://nbenko1.github.io/#/
-- How it works
+# Human in the Loop for GA Art: Pic Breeder
+
+.center[
+![:scale 35%](img/PicBreeder_0.png)
+]
+
+.largetext[
+In [Pic Breeder](https://nbenko1.github.io/#/), the fitness function is **the user**. The user selects the images to keep, and the program breeds and mutates them.
+]
+
+---
+# PicBreeder: Human Powered Evolution
+
+.cols[
+.c25[
+.center[
+First Generation
+
+![:scale 90%](img/PicEvolution_0.png)
+]
+]
+.c25[
+.center[
+Second Generation
+
+![:scale 90%](img/PicEvolution_1.png)
+]
+]
+.c25[
+.center[
+Third Generation
+
+![:scale 90%](img/PicEvolution_2.png)
+]
+]
+.c25[
+.center[
+Many Generations
+
+![:scale 90%](img/PicEvolution_99.png)
+]
+]
+]
+
+The **Genome** of picbreeder is a small program that produces the images. Each solution changes the parameters of this program, creating new images.
+
+The **Fitness** of picbreeder are your choices of which images you like most.
 
 ---
 # Novelty Search: Evolution without an Objective
-- Interesting discussion: Going straight to the desired image does not work
-- Novelty guided evolution
+.cols[
+.c40[
+The creators of PicBreeder noticed something interesting:
+- .redtext[When you tried to guide the evolution to a particular picture, it was hard to reach that picture]
+- .greentext[when you explored the images by curiority, you found many interesting pictures].
+
+Exploring this idea, they developed **Novelty Search**.
+- In novelty search, .redtext[there is no fitness function]
+- The algorithm keeps .greentext[the most surprising individuals]
+
+]
+.c60[
+.center[
+![:scale 95%](img/novelty_search.png)
+]
+]
+]
+
+.footnote[[Lehman, Stanley: "Abandoning Objectives: Evolution through the search of novelty", 2011](https://doi.org/10.1162/EVCO_a_00025) -- [Demo](http://eplex.cs.ucf.edu/noveltysearch/userspage/demo.html)]
 
 ---
-# Research Example:
-- Evolutionary Algorithm for Room Layout Design
+# Research Example: Foorplan Design
+
+.largetext[
+We used evolutionary algorithms to optimize the generation of foorplans in Houses and Factories:
+- Evaluation by room distance;
+- Evaluation by human preference (interactive EvoComp);
+- (Evaluation by novelty?)
+
+]
+
+.right[![:scale 40%](img/madori.png)]
+
+.footnote[Papers: Zhao, Aranha, Kanoh, 2018, 2017, 2015]
 
 ---
 # Issues in Interactive Evolutionary Computation
-- How to not tire the human (Evolution is slow!)
-  - Collaboration between human fitness and computer fitness
-  - Several levels of evolution
-- How to use subjective evaluation
 
+.cols[
+.c70[
+.largetext[
+- Interactive GA can place a big burden on human evaluators;
+  - Reduce the number of evaluations;
+  - Combine human and computer fitness;
+  - Multiple levels of evaluations;
+
+]
+]
+.c30[
+.center[
+![:scale 95%](img/irasutoya_isogashi.png)
+]
+]
+]
+
+.largetext[
+.right[**Time for a short break!**]
+]
 ---
 layout: false
 class: center, middle
 
 # Part 04: Extra topics in Evolutionary Computation
 
----
-# Extra topics in Evolutionary Computation
+.largetext[
+Where we overview some interesting questions that come up as we dive deeper into evolutionary computation.
+]
 
 ---
 layout: true
@@ -694,10 +990,193 @@ layout: true
 
 ---
 # How Evolution can Surprise us
-- Traditional story about surprising evo and sine wave
-- Surprising Evolution Paper
-- Why evolution does this? Defining a good fitness function and "cheating"
-- This makes evolutionary computation fun.
+
+.largetext[
+Natural Evolution can find surprising and creative solutions to problems:
+
+- Giraffes;
+- Bombardier Beetles;
+- Parasites that reprogram brains;
+- Kiwi Eggs;
+- Etc, etc, etc.
+
+So, we can expect Artificial evolution to be creative too!
+]
+
+.footnote[Much of this section is based on the paper ["The Surprising Creativity of Digital Evolution"](https://arxiv.org/abs/1803.03453)]
+
+---
+# "Evolving an Antenna": An EvoComp story
+
+.largetext[
+A student was using evolution to design an Antenna with an VLSI system.
+
+However, their experiment never worked when they brought it to the advisor's room.
+
+Was the computer shy?
+]
+
+---
+# Evolving a digital creature that can walk.
+
+.largetext[
+The researcher set the fitness as "maximum average speed", and this happened:
+]
+
+.center[
+<iframe width="800" height="400" src="https://www.youtube.com/embed/TaXUZfwACVE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+]
+
+---
+# Walking without your feet touching the ground
+
+.center[
+<iframe width="800" height="400" src="https://www.youtube.com/embed/GdTBqBnqhaQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+]
+
+---
+# Evolving the ability to "Play Dead"
+
+.largetext[
+A researcher wanted to control the reproduction rate in his simulation.
+
+For every new individual, the reproduction rate of that individual would be tested in a separate simulation first. If it was high, the individual would be eliminated.
+
+Artificial evolution learned to detect the separate simulation, and avoided reproducing in that situation.
+]
+
+---
+
+# Exploiting Hide and Seek
+
+.center[
+<iframe width="800" height="400" src="https://www.youtube.com/embed/Lu56xVlZ40M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+]
+
+---
+
+# What do we learn from these surprising results?
+
+.largetext[
+Evolution usually find what researchers **actually asked for** rather than **what they wanted**.
+
+This highlights the importance of **carefully designing a fitness function**.
+
+.center[*Evolution cannot be easily tamed*]
+]
+
+.footnote[Also, really, read the paper. It is fantastic.]
+
+---
+exclude: true
+# Genetic Programming
+
+Some of the examples in the previous paper talked about Genetic Programming.
+
+Genetic Programming is a very cool technique that let's you evolve programs.
+
+We can define programs as a sequence of commands. So a genetic programming algorithm will generate several sequences of programs until we get the program that we want.
+
+Here are some simple examples of what we can do with genetic programs.
+
+Genetic programs are more difficult than genetic algorithms because it is very easy to make a program that doesn't work. For example, if the number of parameters in a function is not specified correctly, the program crashes.
+
+A more complicated problem arises when we want to consider higher level structures: Loops, function calls, ifs, and more importantly: recursion.
+
+The representation of genetic programs might be of importance here.
+
+So what can we do with programs? One cool thing would be to do programs that reproduce themselves (quines). Evolving those programs might generate programs that reproduce themselves and maybe do something useful?
+
+Talking a bit about Yifan's research of knowledge representation and
+transferring knowledge between GP instances. More than knowledge extraction/usage, transferring knowledge between instances is the key idea of Yifan's research in my opinion.
+
+---
+layout: true
+
+.sectionname[**Part 04.02**: Open Ended Evolution: The final frontier]
+
+---
+# Open Ended Evolution: The final Frontier
+
+.center[
+![:scale 65%](img/OEE_Nature.png)
+
+.largetext[
+Evolution in Nature is Open Ended.  
+We don't know what can come out of it.
+]
+]
+
+---
+# However (current) EvoComp is NOT open-ended
+
+.center[
+![:scale 65%](img/OEE_notOEE.png)
+]
+
+.largetext[
+Genetic Algorithms are NOT open-ended. Although they can surprise us, they will eventually converge to an optimum.]
+
+(For example: for a GA, we can usually enumerate all possible solutions, and choose the best one of the entire group. Eventually the algorithm will reach that solution and stop.)
+
+.largetext[
+Many researchers have trying to find the "magic juice" that would create an artificial OEE system.
+]
+
+---
+# Can we make OEE by using an open substrate?
+.cols[
+.c30[
+![:scale 90%](img/Avida_logo.png)
+]
+.c70[
+.largetext[
+One common approach is to use a very large substrate: Programming, Life Simulations, Games.
+
+If there is enough variety for artificial life to evolve into, would OEE happen naturally?
+
+It hasn't happened yet, but people still try more complex environments.
+]
+]
+]
+---
+# Can we make OEE by novelty search?
+.largetext[
+If the barrier to OEE is that Evolutionary Computation is focused on a fixed fitness function, could we reach OEE by using Novelty Search instead?
+]
+
+.cols[
+.c50[
+![:scale 90%](img/novelty_search.png)
+]
+.c50[
+.largetext[
+- Novelty Search could push digital creatures to develop into new directions.
+
+- However, we haven't seen OEE with novelty search, yet.
+]
+]
+]
+
+
+---
+
+# Is Open Ended Evolution a "state"?
+
+.center[
+![:scale 80%](img/meme_beforeafteriphone.jpg)
+]
+
+.largetext[Some people think that even systems capable of OEE might not be under a state of OEE all the time. That may make finding OEE more difficult.]
+
+---
+# So, how far are we from Open Ended Evolution?
+
+.largetext[
+The true answer is that ... we don't know. It is not clear year what is necessary for Open Ended Evolution.
+
+But designing a system capable of OEE will indicate to us that the system is **capable** of developing creatures as complex and intelligent as we observe in nature.
+]
 
 ---
 exclude: true
@@ -705,20 +1184,6 @@ exclude: true
 # From Life to Simulation, Back to Life
 (xenobots)
 
-# Genetic Programming
-
-- What if we could evolve *Programs*
-- Self-reproducing programs
-- Problems with the halting problem.
-
----
-
-# Open Ended Evolution: The final Frontier
-- Current Evolutionary Algorithms are usually *Optimization* Algorithms
-- EC can be used to find the best car, best route, best x
-- But natural evolution can find a huge VARIETY of Creatures
-- This is OEE. Can we create OEE with EC? What is necessary to achieve OEE?
-- Environment? Computer Power? Representativeness?
 
 ---
 layout: false
@@ -734,22 +1199,35 @@ layout: true
 ---
 
 # Hands On Evolutionary Computation
-## Fitness Landscape Explorer:
-- https://adaptive.land/
-- https://adaptive.land/coevolution.html
 
-Study what makes Evolution work or not work.
+.largetext[
+In today's hands-on part, I will introduce several online simulators of evolutionary computation.
 
-## Car Evolution
-- https://rednuht.org/genetic_cars_2/
+I want you to form groups and focus on each of the simulators.
 
-Try different parameters for evolution.
-You can evolve one car against others.
+Notice the following:
+- How much each parameter affects the result of the simulator.
+- How much a reset affects the result of the simulator.
+- If you can save an individual, try to load an evolved individual in a brand new simulation and see what happens.
+- How would you report the result of an Evolutionary Computation run?
 
-## Human Interaction Art Breeder
-- Pic Breeder: https://nbenko1.github.io/#/
+]
 
-Evolve interesting images. What other sort of art would be interesting to evolve?
+---
 
-## Reproducing Images
-https://chriscummins.cc/s/genetics/#
+# Hands-on: Evolutionary Computation Simulators:
+
+.largetext[
+
+**Optimizers**:
+- [**Car Evolution**](https://rednuht.org/genetic_cars_2/)
+
+- [**Walker Evolution**](https://rednuht.org/genetic_walkers/)
+
+- [**Reproducing Images**](https://chriscummins.cc/s/genetics/#)
+
+**Non-Optimizers**:
+- [**Pic Breeder**](https://nbenko1.github.io/#/)
+
+- **Fitness Landscape Explorer**: [Base](https://adaptive.land/), [Co-evolution](https://adaptive.land/coevolution.html)
+]
