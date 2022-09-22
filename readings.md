@@ -43,6 +43,9 @@ discussed in this lecture.
 - [Netlogo](https://ccl.northwestern.edu/netlogo/)
 - [MESA Library](https://mesa.readthedocs.io/en/latest/)
 
+- [Ant Colony Optimization Simulator](https://thiagodnf.github.io/aco-simulator/#)
+- [Ant Colony Optimization for Art](https://amydyer.art/wordpress/index.php/2020/01/01/drawing-with-ants-generative-art-with-ant-colony-optimization-algorithms/)
+
 ## Neural Networks
 
 ## Fiction

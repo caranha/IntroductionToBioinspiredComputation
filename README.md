@@ -12,6 +12,9 @@ representative of Bioinspired Computation.
 Another way of looking at this page is "Some Things I wish Students Knew
 When they Joined my laboratory".
 
+## GAMA MODELS
+- [Flower 0](Gama/Flower_00.gaml)
+
 ## General Information
 
 - [Syllabus](syllabus.md)

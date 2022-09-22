@@ -368,25 +368,77 @@ Application of MAS principles for Genetic Algorithms.
 ---
 # Ant Colony Optimization Procedure
 
+.cols[
+.c70[
 .largetext[
-1. Initially, .redtext[N] ant agents walk the graph randomly until all cities or a maximum length is reached.
+1. Initialize the procedure with **N** ant agents.
 
-2. Calculate the route size of each agent.
+2. In the beginning, the ant agents **walk randomly** until all cities are visited
 
-3. Each agent leaves pheromone in its trail,  
-inversely proportional to the route size.
+3. Each ant leaves pheromone on its path .redtext[inversely proportional to the path length]
 
-4. All agents walk the graph again.  
+4. All agents walk the path again.  
 This time, the walk is weighted by the amount of pheromone.
 
-5. Return to 2.
+5. Return to 3 until you find the shortest path.]
+]
+.c30[
+![:scale 95%](img/Aco_shortpath.png)
+]
 ]
 
 ---
-# Ant Colony Optimization Results
+# [Ant Colony Optimization Simulator](https://thiagodnf.github.io/aco-simulator/#)
+
+.center[
+.cols[
+.c50[
+![:scale 75%](img/ACO_simulator_0.png)
+
+![:scale 75%](img/ACO_simulator_2.png)
+]
+.c50[
+![:scale 75%](img/ACO_simulator_1.png)
+
+![:scale 75%](img/ACO_simulator_3.png)
+]
+]]
 
 ---
 # Particle Swarm Optimization
+
+.largetext[
+Particle Swarm Optimization is an **Optimization Algorithm**, like GAs.  
+It is based on group behavior like **Boids**.
+]
+
+.cols[
+.c50[
+- A set of particles represent solutions to the optimization problem.
+
+- Each particle has a **speed** and a **personal best**
+
+- The entire group has a **global best**
+
+- The speed of a particle is composed of three vectors:
+  - Past speed;
+  - Vector towards the **personal best**
+  - Vector towards the **global best**
+
+]
+.c50[
+![:scale 100%](img/PSO_1.png)
+]
+]
+
+---
+# Characteristics of Particle Swarm Optimization (PSO)
+
+Particularly good for:
+- **Niche-aware Optimization**: Multi-modal problem, where there are several equally good solutions;
+- **Dynamic Optimization**: Problems where the solution changes over time.
+
+![:scale 40%](img/PSO_2.gif)
 
 ---
 layout: false
@@ -406,7 +458,17 @@ layout: true
 In this section, I will introduce some of my research involving multi-agent systems.
 
 ---
+# Evacuation and Infection Simulation
 
+.largetext[
+Using Multi Agent System to simulate the evacuation of earthquake and the transmission of infections disease.
+
+- City Simulation Project Presentation;
+]
+
+---
+exclude: true
+# TODO
 # Earthquake and Tsunami Evacuation Simulation
 
 - Simulation of Evacuation process, important for Japan.
@@ -416,7 +478,8 @@ In this section, I will introduce some of my research involving multi-agent syst
 - Results -- Simulator that takes into account staff and Wireless Broadcast
 
 ---
-
+exclude: true
+# TODO
 # Covid Infection Simulation
 
 - More recently, COVID is very important.
@@ -427,34 +490,48 @@ In this section, I will introduce some of my research involving multi-agent syst
 - Mobility Model
 
 ---
+# AIWolf Project
 
+.largetext[
+Using Multi-Agent Systems to represent negotiation and trust-building in a social game context.
+
+- AIWolf Crosslabs Presentation.
+]
+
+---
 # Minecraft Settlement Generation
 
+.largetext[
 - Changing the subject a bit. Procedural Generation.
 - Generation of a settlement in Minecraft
   - Gameplay and Aesthetics
   - Resource Management (Agent Simulation)
   - Narrative and Cultural Issues (Can also be simulated?)
 - Results: 1st place 2021, 3rd place 2022
+]
 
 ---
+exclude: true
 layout: false
 class: center, middle
 
 # Part 03: Issues in Multi Agent Systems
 
 ---
+exclude: true
 layout: true
 
 .sectionname[**Part 03.01**: MAS Research Issues]
 
 ---
+exclude: true
 
 # Issues in Multi Agent Systems
 - Representing Knowledge (AIWolf)
 - Using data from humans for learning (Mobility Learning)
 
 ---
+exclude: true
 
 # Representing Knowledge in Multi Agent Systems
 
@@ -462,6 +539,7 @@ layout: true
 - However, representing the knowledge of Agents in a MAS is a hard, still untreated problem
 
 ---
+exclude: true
 
 # Representing Knowledge in Multi Agent Systems
 
@@ -472,12 +550,14 @@ layout: true
 But what about Learning? And Circular Knowledge?
 
 ---
+exclude: true
 
 # The AIWolf Project
 
 It has many objectives, but I particularly find the representation of knowledge to be a key part of the problem.
 
 ---
+exclude: true
 
 # Using Data in Multi Agent Systems
 
