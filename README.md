@@ -13,7 +13,7 @@ Another way of looking at this page is "Some Things I wish Students Knew
 When they Joined my laboratory".
 
 ## GAMA MODELS
-- [Flower 0](Gama/Flower_00.gaml)
+- [Gama Tutorial](Gama/GamaTutorial.html)
 
 ## General Information
 
